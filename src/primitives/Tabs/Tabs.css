@@ -1,0 +1,49 @@
+.ui26-tabs {
+  display: flex;
+  flex-direction: column;
+}
+
+.ui26-tablist {
+  display: flex;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-surface);
+}
+
+.ui26-tab {
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  padding: 8px 16px;
+  cursor: pointer;
+  color: var(--text-secondary);
+  font: inherit;
+  outline: none;
+}
+
+.ui26-tab:hover:not(:disabled) {
+  color: var(--text-primary);
+  background: var(--bg-overlay);
+}
+
+.ui26-tab:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: -2px;
+}
+
+.ui26-tab--active {
+  color: var(--text-primary);
+  border-bottom-color: var(--accent);
+  background: var(--bg-base);
+}
+
+.ui26-tab:disabled {
+  color: var(--text-muted);
+  cursor: not-allowed;
+}
+
+.ui26-tabpanel {
+  padding: 16px;
+  color: var(--text-primary);
+  outline: none;
+}
