@@ -1,0 +1,71 @@
+.ui26-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  cursor: pointer;
+  font: inherit;
+  line-height: 1;
+  transition: background 0.12s ease, color 0.12s ease, border-color 0.12s ease;
+}
+
+.ui26-btn:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.ui26-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.ui26-btn--sm {
+  padding: 4px 8px;
+  font-size: 12px;
+}
+.ui26-btn--md {
+  padding: 6px 12px;
+  font-size: 14px;
+}
+.ui26-btn--lg {
+  padding: 8px 16px;
+  font-size: 16px;
+}
+
+.ui26-btn--primary {
+  background: var(--accent);
+  color: var(--bg-base);
+  border-color: var(--accent);
+}
+.ui26-btn--primary:hover:not(:disabled) {
+  background: var(--accent-hover);
+  border-color: var(--accent-hover);
+}
+
+.ui26-btn--secondary {
+  background: var(--bg-surface);
+  color: var(--text-primary);
+  border-color: var(--border);
+}
+.ui26-btn--secondary:hover:not(:disabled) {
+  background: var(--bg-overlay);
+}
+
+.ui26-btn--ghost {
+  background: transparent;
+  color: var(--text-primary);
+}
+.ui26-btn--ghost:hover:not(:disabled) {
+  background: var(--bg-overlay);
+}
+
+.ui26-btn--danger {
+  background: var(--red);
+  color: var(--bg-base);
+  border-color: var(--red);
+}
+.ui26-btn--danger:hover:not(:disabled) {
+  filter: brightness(1.1);
+}

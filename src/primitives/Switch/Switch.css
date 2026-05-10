@@ -1,0 +1,65 @@
+.ui26-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  user-select: none;
+  position: relative;
+}
+
+.ui26-switch__input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.ui26-switch__track {
+  position: relative;
+  display: inline-block;
+  width: 32px;
+  height: 18px;
+  background: var(--bg-overlay);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  transition: background 0.12s ease, border-color 0.12s ease;
+}
+
+.ui26-switch__thumb {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 12px;
+  height: 12px;
+  background: var(--text-secondary);
+  border-radius: 50%;
+  transition: transform 0.12s ease, background 0.12s ease;
+}
+
+.ui26-switch__input:checked + .ui26-switch__track {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.ui26-switch__input:checked + .ui26-switch__track .ui26-switch__thumb {
+  background: var(--bg-base);
+  transform: translateX(14px);
+}
+
+.ui26-switch__input:focus-visible + .ui26-switch__track {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.ui26-switch__input:disabled + .ui26-switch__track {
+  opacity: 0.5;
+}
+
+.ui26-switch:has(.ui26-switch__input:disabled) {
+  cursor: not-allowed;
+}
+
+.ui26-switch__label {
+  color: var(--text-primary);
+  font-size: 14px;
+}

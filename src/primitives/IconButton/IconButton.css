@@ -1,0 +1,43 @@
+.ui26-icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  border-radius: 4px;
+  color: var(--text-secondary);
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.12s ease, color 0.12s ease;
+}
+
+.ui26-icon-btn:hover:not(:disabled) {
+  background: var(--bg-overlay);
+  color: var(--text-primary);
+}
+
+.ui26-icon-btn:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+
+.ui26-icon-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.ui26-icon-btn--sm {
+  width: 24px;
+  height: 24px;
+  font-size: 14px;
+}
+.ui26-icon-btn--md {
+  width: 32px;
+  height: 32px;
+  font-size: 16px;
+}
+.ui26-icon-btn--lg {
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+}
