@@ -12,7 +12,8 @@
       "import": "./dist/lib/index.js",
       "default": "./dist/lib/index.js"
     },
-    "./theme.css": "./src/theme/theme.css"
+    "./theme.css": "./src/theme/theme.css",
+    "./styles.css": "./dist/lib/styles.css"
   },
   "files": [
     "dist/lib",

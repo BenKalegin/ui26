@@ -15,7 +15,11 @@ export default defineConfig({
     sourcemap: true,
     cssCodeSplit: false,
     rollupOptions: {
-      external: ["react", "react-dom", "react/jsx-runtime"]
+      external: ["react", "react-dom", "react/jsx-runtime"],
+      output: {
+        assetFileNames: (asset) =>
+          asset.name && asset.name.endsWith(".css") ? "styles.css" : "[name][extname]"
+      }
     }
   },
   test: {
