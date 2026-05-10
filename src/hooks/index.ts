@@ -1,2 +1,5 @@
-// Hooks will land here in Phase 1: useEscapeKey, useClickOutside, useEnterSubmit, useFocusTrap.
-export {};
+export { useEscapeKey } from "./useEscapeKey";
+export { useClickOutside } from "./useClickOutside";
+export { useEnterSubmit } from "./useEnterSubmit";
+export type { UseEnterSubmitOptions } from "./useEnterSubmit";
+export { useFocusTrap } from "./useFocusTrap";
