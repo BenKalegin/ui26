@@ -1,5 +1,6 @@
 export { useEscapeKey } from "./useEscapeKey";
 export { useClickOutside } from "./useClickOutside";
+export type { UseClickOutsideOptions } from "./useClickOutside";
 export { useEnterSubmit } from "./useEnterSubmit";
 export type { UseEnterSubmitOptions } from "./useEnterSubmit";
 export { useFocusTrap } from "./useFocusTrap";

@@ -1,4 +1,5 @@
 import {
+  ButtonHTMLAttributes,
   ReactNode,
   createContext,
   useContext,
@@ -107,16 +108,16 @@ export function Popover({
   return <PopoverContext.Provider value={value}>{children}</PopoverContext.Provider>;
 }
 
-export interface PopoverTriggerProps {
+export interface PopoverTriggerProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: ReactNode;
-  className?: string;
 }
 
-export function PopoverTrigger({ children, className }: PopoverTriggerProps) {
+export function PopoverTrigger({ children, className, ...rest }: PopoverTriggerProps) {
   const ctx = usePopoverContext();
   return (
     <button
       type="button"
+      {...rest}
       ref={ctx.refs.setReference}
       className={className}
       data-state={ctx.open ? "open" : "closed"}

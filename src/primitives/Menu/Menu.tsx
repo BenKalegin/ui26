@@ -1,4 +1,5 @@
 import {
+  ButtonHTMLAttributes,
   ReactNode,
   RefObject,
   createContext,
@@ -137,16 +138,16 @@ export function Menu({
   return <MenuContext.Provider value={value}>{children}</MenuContext.Provider>;
 }
 
-export interface MenuTriggerProps {
+export interface MenuTriggerProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: ReactNode;
-  className?: string;
 }
 
-export function MenuTrigger({ children, className }: MenuTriggerProps) {
+export function MenuTrigger({ children, className, ...rest }: MenuTriggerProps) {
   const ctx = useMenuContext();
   return (
     <button
       type="button"
+      {...rest}
       ref={ctx.refs.setReference}
       className={className}
       data-state={ctx.open ? "open" : "closed"}
