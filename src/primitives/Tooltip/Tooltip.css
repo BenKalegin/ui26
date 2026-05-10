@@ -1,0 +1,13 @@
+.ui26-tooltip {
+  background: var(--bg-overlay);
+  color: var(--text-primary);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 4px 8px;
+  font-size: 12px;
+  line-height: 1.4;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  z-index: 1100;
+  max-width: 280px;
+  pointer-events: none;
+}
