@@ -6,9 +6,11 @@ export default defineConfig({
   plugins: [react()],
   build: {
     lib: {
-      entry: resolve(__dirname, "src/index.ts"),
-      formats: ["es"],
-      fileName: () => "index.js"
+      entry: {
+        index: resolve(__dirname, "src/index.ts"),
+        icons: resolve(__dirname, "src/icons/index.ts")
+      },
+      formats: ["es"]
     },
     outDir: "dist/lib",
     emptyOutDir: true,
@@ -17,6 +19,8 @@ export default defineConfig({
     rollupOptions: {
       external: ["react", "react-dom", "react/jsx-runtime"],
       output: {
+        entryFileNames: "[name].js",
+        chunkFileNames: "chunks/[name]-[hash].js",
         assetFileNames: (asset) =>
           asset.name && asset.name.endsWith(".css") ? "styles.css" : "[name][extname]"
       }
