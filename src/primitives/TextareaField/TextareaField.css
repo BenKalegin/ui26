@@ -1,0 +1,27 @@
+.ui26-field__textarea {
+    background: var(--bg-base);
+    color: var(--text-primary);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 6px 10px;
+    font: inherit;
+    outline: none;
+    transition: border-color 0.12s ease;
+    resize: vertical;
+    min-height: 80px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.ui26-field__textarea:focus {
+    border-color: var(--accent);
+}
+
+.ui26-field__textarea:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.ui26-field--error .ui26-field__textarea {
+    border-color: var(--red);
+}

@@ -1,4 +1,4 @@
-import { CSSProperties, ReactNode, useRef } from "react";
+import { CSSProperties, ReactNode, useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { useEscapeKey } from "../../hooks/useEscapeKey";
 import { useClickOutside } from "../../hooks/useClickOutside";
@@ -6,6 +6,8 @@ import { useFocusTrap } from "../../hooks/useFocusTrap";
 import "./Drawer.css";
 
 export type DrawerSide = "left" | "right" | "top" | "bottom";
+
+const SLIDE_DURATION_MS = 195;
 
 export interface DrawerProps {
   open: boolean;
@@ -32,6 +34,23 @@ function sizeStyle(side: DrawerSide, size: string | number | undefined): CSSProp
   return side === "left" || side === "right" ? { width: value } : { height: value };
 }
 
+/** Keeps the drawer mounted long enough for slide-out CSS transition to complete. */
+function useTransitionRender(open: boolean, durationMs: number) {
+  const [rendered, setRendered] = useState(open);
+  const [active, setActive] = useState(open);
+  useEffect(() => {
+    if (open) {
+      setRendered(true);
+      const id = requestAnimationFrame(() => setActive(true));
+      return () => cancelAnimationFrame(id);
+    }
+    setActive(false);
+    const t = setTimeout(() => setRendered(false), durationMs);
+    return () => clearTimeout(t);
+  }, [open, durationMs]);
+  return { rendered, active };
+}
+
 export function Drawer({
   open,
   onClose,
@@ -47,12 +66,13 @@ export function Drawer({
   ariaLabel
 }: DrawerProps) {
   const ref = useRef<HTMLDivElement>(null);
+  const { rendered, active } = useTransitionRender(open, SLIDE_DURATION_MS);
   useEscapeKey(onClose, open && closeOnEscape);
   useClickOutside(ref, onClose, open && modal && closeOnClickOutside);
   const trap = trapFocus ?? modal;
   useFocusTrap(ref, open && trap);
 
-  if (!open) return null;
+  if (!rendered) return null;
 
   const drawer = (
     <div
@@ -60,7 +80,12 @@ export function Drawer({
       role="dialog"
       aria-modal={modal ? "true" : undefined}
       aria-label={ariaLabel}
-      className={cls("ui26-drawer", `ui26-drawer--${side}`, className)}
+      className={cls(
+        "ui26-drawer",
+        `ui26-drawer--${side}`,
+        active && "ui26-drawer--open",
+        className
+      )}
       style={sizeStyle(side, size)}
     >
       {children}
@@ -68,7 +93,19 @@ export function Drawer({
   );
 
   return createPortal(
-    modal ? <div className={cls("ui26-drawer__overlay", overlayClassName)}>{drawer}</div> : drawer,
+    modal ? (
+      <div
+        className={cls(
+          "ui26-drawer__overlay",
+          active && "ui26-drawer__overlay--open",
+          overlayClassName
+        )}
+      >
+        {drawer}
+      </div>
+    ) : (
+      drawer
+    ),
     document.body
   );
 }

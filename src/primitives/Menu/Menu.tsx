@@ -1,5 +1,6 @@
 import {
   ButtonHTMLAttributes,
+  MouseEvent as ReactMouseEvent,
   ReactNode,
   RefObject,
   createContext,
@@ -184,11 +185,10 @@ export function MenuContent({ children, className }: MenuContentProps) {
   );
 }
 
-export interface MenuItemProps {
+export interface MenuItemProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: ReactNode;
   onSelect?: () => void;
-  disabled?: boolean;
-  className?: string;
+  /** floating-ui list typeahead label */
   label?: string;
 }
 
@@ -197,7 +197,9 @@ export function MenuItem({
   onSelect,
   disabled = false,
   className,
-  label
+  label,
+  onClick: userOnClick,
+  ...rest
 }: MenuItemProps) {
   const ctx = useMenuContext();
   const item = useListItem({ label: label ?? null });
@@ -208,13 +210,15 @@ export function MenuItem({
       type="button"
       role="menuitem"
       tabIndex={isActive ? 0 : -1}
+      {...rest}
       ref={item.ref}
       disabled={disabled}
       data-active={isActive ? "" : undefined}
       className={cls("ui26-menu__item", className)}
       {...ctx.getItemProps({
-        onClick: () => {
+        onClick: (e) => {
           if (disabled) return;
+          userOnClick?.(e as ReactMouseEvent<HTMLButtonElement>);
           onSelect?.();
           ctx.setOpen(false);
         }
