@@ -33,9 +33,10 @@ describe("applyTheme", () => {
     expect(getActiveTheme().id).toBe(ThemeId.GithubLight);
   });
 
-  it("registers all 8 themes", () => {
-    expect(THEMES).toHaveLength(8);
+  it("registers all 9 themes", () => {
+    expect(THEMES).toHaveLength(9);
     expect(findTheme(ThemeId.CatppuccinMocha)).toBeDefined();
+    expect(findTheme(ThemeId.Graphite)).toBeDefined();
     expect(findTheme(ThemeId.GruvboxLight)).toBeDefined();
   });
 });

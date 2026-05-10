@@ -4,6 +4,7 @@ export const ThemeId = {
   SolarizedDark: "solarized-dark",
   Dracula: "dracula",
   GruvboxDark: "gruvbox-dark",
+  Graphite: "graphite",
   SolarizedLight: "solarized-light",
   GithubLight: "github-light",
   GruvboxLight: "gruvbox-light"
@@ -123,6 +124,26 @@ const DRACULA: ThemeColors = {
   diffRemovedBg: "#3d1e26"
 };
 
+const GRAPHITE: ThemeColors = {
+  bgBase: "#1e1f22",
+  bgSurface: "#181818",
+  bgOverlay: "#2a2a2a",
+  bgMuted: "#3a3a3a",
+  textPrimary: "#e0e0e0",
+  textSecondary: "#a0a0a0",
+  textMuted: "#6a6a6a",
+  accent: "#90caf9",
+  accentHover: "#64b5f6",
+  green: "#a6d784",
+  red: "#f48fb1",
+  yellow: "#ffd866",
+  border: "#3a3a3a",
+  scrollbarBg: "#181818",
+  scrollbarThumb: "#3a3a3a",
+  diffAddedBg: "#1e2d22",
+  diffRemovedBg: "#2d1e22"
+};
+
 const GRUVBOX_DARK: ThemeColors = {
   bgBase: "#282828",
   bgSurface: "#1D2021",
@@ -209,6 +230,7 @@ export const THEMES: readonly ThemeMeta[] = [
   { id: ThemeId.SolarizedDark, label: "Solarized Dark", group: ThemeGroup.Dark, colors: SOLARIZED_DARK },
   { id: ThemeId.Dracula, label: "Dracula", group: ThemeGroup.Dark, colors: DRACULA },
   { id: ThemeId.GruvboxDark, label: "Gruvbox Dark", group: ThemeGroup.Dark, colors: GRUVBOX_DARK },
+  { id: ThemeId.Graphite, label: "Graphite", group: ThemeGroup.Dark, colors: GRAPHITE },
   { id: ThemeId.SolarizedLight, label: "Solarized Light", group: ThemeGroup.Light, colors: SOLARIZED_LIGHT },
   { id: ThemeId.GithubLight, label: "GitHub Light", group: ThemeGroup.Light, colors: GITHUB_LIGHT },
   { id: ThemeId.GruvboxLight, label: "Gruvbox Light", group: ThemeGroup.Light, colors: GRUVBOX_LIGHT }
