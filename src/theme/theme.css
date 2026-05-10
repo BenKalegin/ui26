@@ -1,0 +1,31 @@
+:root,
+[data-theme="light"] {
+  --ui26-bg: #ffffff;
+  --ui26-fg: #1a1a1a;
+  --ui26-surface: #f7f7f8;
+  --ui26-border: #e5e5e7;
+  --ui26-accent: #2f6feb;
+  --ui26-text-muted: #6b7280;
+
+  --ui26-radius-sm: 4px;
+  --ui26-radius-md: 8px;
+
+  --ui26-space-1: 4px;
+  --ui26-space-2: 8px;
+  --ui26-space-3: 12px;
+  --ui26-space-4: 16px;
+
+  --ui26-font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+  --ui26-z-popover: 1000;
+  --ui26-z-modal: 1200;
+}
+
+[data-theme="dark"] {
+  --ui26-bg: #1a1a1a;
+  --ui26-fg: #f5f5f5;
+  --ui26-surface: #232326;
+  --ui26-border: #353539;
+  --ui26-accent: #4d8eff;
+  --ui26-text-muted: #9ca3af;
+}

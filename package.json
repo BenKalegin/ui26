@@ -1,0 +1,52 @@
+{
+  "name": "@benkalegin/ui26",
+  "version": "0.0.0",
+  "description": "Shared UI primitives, hooks, and theme tokens for clouddiagram-editor and axonize.",
+  "type": "module",
+  "main": "./dist/lib/index.js",
+  "module": "./dist/lib/index.js",
+  "types": "./dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/types/index.d.ts",
+      "import": "./dist/lib/index.js",
+      "default": "./dist/lib/index.js"
+    },
+    "./theme.css": "./src/theme/theme.css"
+  },
+  "files": [
+    "dist/lib",
+    "dist/types",
+    "src/theme/theme.css"
+  ],
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BenKalegin/ui26.git"
+  },
+  "scripts": {
+    "build": "pnpm build:lib && pnpm build:types",
+    "build:lib": "vite build",
+    "build:types": "tsc -p tsconfig.types.json",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit"
+  },
+  "peerDependencies": {
+    "react": ">=19",
+    "react-dom": ">=19"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.1",
+    "react": "^19.2.5",
+    "react-dom": "^19.2.5",
+    "typescript": "^5.9.3",
+    "vite": "^8.0.10",
+    "vitest": "^4.1.5"
+  }
+}
