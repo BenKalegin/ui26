@@ -1,0 +1,32 @@
+.ui26-collapsible {
+  display: block;
+}
+
+.ui26-collapsible__trigger {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background: transparent;
+  border: none;
+  padding: 6px 8px;
+  cursor: pointer;
+  color: var(--text-primary);
+  font: inherit;
+  text-align: left;
+}
+
+.ui26-collapsible__trigger:hover {
+  background: var(--bg-overlay);
+}
+
+.ui26-collapsible__chevron {
+  display: inline-flex;
+  width: 14px;
+  justify-content: center;
+  color: var(--text-muted);
+}
+
+.ui26-collapsible__content {
+  padding: 4px 8px 8px 22px;
+  color: var(--text-primary);
+}
