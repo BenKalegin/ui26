@@ -39,7 +39,9 @@
     "react": ">=19",
     "react-dom": ">=19"
   },
-  "dependencies": {},
+  "dependencies": {
+    "@floating-ui/react": "^0.27.0"
+  },
   "devDependencies": {
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^16.3.2",

@@ -1,0 +1,11 @@
+.ui26-popover {
+  background: var(--bg-surface);
+  color: var(--text-primary);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  z-index: 1000;
+  outline: none;
+  min-width: 120px;
+  max-width: min(90vw, 480px);
+}
