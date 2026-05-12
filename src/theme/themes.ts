@@ -187,21 +187,21 @@ const SOLARIZED_LIGHT: ThemeColors = {
 const GITHUB_LIGHT: ThemeColors = {
   bgBase: "#FFFFFF",
   bgSurface: "#F6F8FA",
-  bgOverlay: "#E1E4E8",
-  bgMuted: "#D1D5DA",
-  textPrimary: "#24292E",
-  textSecondary: "#586069",
-  textMuted: "#959DA5",
-  accent: "#0366D6",
-  accentHover: "#0451A5",
-  green: "#28A745",
-  red: "#D73A49",
-  yellow: "#E36209",
-  border: "#E1E4E8",
+  bgOverlay: "#EFF2F5",
+  bgMuted: "#D1D9E0",
+  textPrimary: "#1F2328",
+  textSecondary: "#59636E",
+  textMuted: "#818B98",
+  accent: "#0969DA",
+  accentHover: "#0550AE",
+  green: "#1A7F37",
+  red: "#CF222E",
+  yellow: "#9A6700",
+  border: "#D1D9E0",
   scrollbarBg: "#F6F8FA",
-  scrollbarThumb: "#D1D5DA",
-  diffAddedBg: "#e6ffec",
-  diffRemovedBg: "#ffebe9"
+  scrollbarThumb: "#D1D9E0",
+  diffAddedBg: "#DAFBE1",
+  diffRemovedBg: "#FFEBE9"
 };
 
 const GRUVBOX_LIGHT: ThemeColors = {
